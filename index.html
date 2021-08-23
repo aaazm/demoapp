@@ -66,9 +66,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
     <script>
+      const {app, BrowserWindow} =require('electron');
       const { ipcRenderer } = require('electron');
       const version = document.getElementById('version');
-
       ipcRenderer.send('app_version');
       ipcRenderer.on('app_version', (event, arg) => {
         ipcRenderer.removeAllListeners('app_version');
