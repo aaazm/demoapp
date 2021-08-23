@@ -50,8 +50,8 @@
       </div>
  </div>
 
-  <!-- <p id="version"></p> -->
- <!---- <div id="notification" class="hidden">
+  <p id="version"></p>
+  <div id="notification" class="hidden">
     <p id="message"></p>
     <button id="close-button" onClick="closeNotification()">
       Close
@@ -59,13 +59,13 @@
     <button id="restart-button" onClick="restartApp()" class="hidden">
       Restart
     </button>
-  </div> -->
+  </div>
     <script src="./build/js/app.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
-    <!-- <script>
+    <script>
       const { ipcRenderer } = require('electron');
       const version = document.getElementById('version');
 
@@ -95,39 +95,39 @@
       function restartApp() {
         ipcRenderer.send('restart_app');
       }
-    </script> -->
+    </script>
 <script>
  
-  // document.addEventListener("keyup", function (e) {
-  //       var keyCode = e.keyCode ? e.keyCode : e.which;
-  //       if (keyCode == 44) {
-  //         stopPrntScr();
-  //       }
-  //     });
-  //     function stopPrntScr() {
-  //       var inpFld = document.createElement("input");
-  //       inpFld.setAttribute("value", ".");
-  //       inpFld.setAttribute("width", "0");
-  //       inpFld.style.height = "0px";
-  //       inpFld.style.width = "0px";
-  //       inpFld.style.border = "0px";
-  //       document.body.appendChild(inpFld);
-  //       inpFld.select();
-  //       document.execCommand("copy");
-  //       inpFld.remove(inpFld);
-  //     }
-  //     function AccessClipboardData() {
-  //       try {
-  //         window.clipboardData.setData("text", "Access   Restricted");
-  //       } catch (err) {}
-  //     }
-  //     setInterval("AccessClipboardData()", 300);
+  document.addEventListener("keyup", function (e) {
+        var keyCode = e.keyCode ? e.keyCode : e.which;
+        if (keyCode == 44) {
+          stopPrntScr();
+        }
+      });
+      function stopPrntScr() {
+        var inpFld = document.createElement("input");
+        inpFld.setAttribute("value", ".");
+        inpFld.setAttribute("width", "0");
+        inpFld.style.height = "0px";
+        inpFld.style.width = "0px";
+        inpFld.style.border = "0px";
+        document.body.appendChild(inpFld);
+        inpFld.select();
+        document.execCommand("copy");
+        inpFld.remove(inpFld);
+      }
+      function AccessClipboardData() {
+        try {
+          window.clipboardData.setData("text", "Access   Restricted");
+        } catch (err) {}
+      }
+      setInterval("AccessClipboardData()", 300);
       
-      // $(document).ready(function() {
-      //   $('#modal-close-movie').click(function() {
-      //       $('#modal-video')[0].pause();
-      //   });
-      // });
+      $(document).ready(function() {
+        $('#modal-close-movie').click(function() {
+            $('#modal-video')[0].pause();
+        });
+      });
   </script>
 </body>
 </html>
