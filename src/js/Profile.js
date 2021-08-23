@@ -22,7 +22,7 @@ export default function Profile() {
       <div className="left_dv lft-log">
         <img className="lft_tb_log" src="src/js/img/logo.png" />
         <ul>
-        <NavLink to="/" className="nv_lik"  style={{color: "#000", textDecoration: "none",}}><li className=" bt"><img src='src/js/img/icon-2.png' alt="icon" /><span className="nv_dtl">Profile</span></li></NavLink>
+        <NavLink to="/" className="nv_lik"  style={{color: "#000", textDecoration: "none",}}><li className=" bt"><img src='src/js/img/icon-2.png' alt="icon" /><span className="nv_dtl">Profil</span></li></NavLink>
         <NavLink to="/Mycorner" className="nv_lik" activeClassName="main_active" style={{color: "#000", textDecoration: "none",}}> <li className=" bt"><img src='src/js/img/icon-2.png' alt="icon" /><span className="nv_dtl">My Corner</span></li></NavLink>
         <NavLink to="/Pdf" className="nv_lik" activeClassName="main_active" style={{color: "#000", textDecoration: "none",}}><li className=" bt"><img src='src/js/img/icon-2.png' alt="icon" /><span className="nv_dtl">Pdf Corner</span></li></NavLink>
         <NavLink to="/Onlinetst" className="nv_lik" activeClassName="main_active" style={{color: "#000", textDecoration: "none",}}><li className=" bt"><img src='src/js/img/icon-2.png' alt="icon" /><span className="nv_dtl">Online Test</span></li></NavLink>
