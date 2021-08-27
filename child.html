@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>child</title>
+</head>
+<style>
+  body{
+    overflow: hidden;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  #title-bar-btns {
+    -webkit-app-region: no-drag;
+    -webkit-app-region: no-drag;
+    position: fixed;
+    top: 0px;
+    right: 0;
+    background: #0c0c0c;
+    width: 100%;
+    height: 24px;
+}
+#close{
+  width: 34px;
+    height: 26px;
+    background: #000;
+    color: #fff;
+    margin-top: -2px;
+}
+#notification {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 200px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.hidden {
+  display: none;
+}
+</style>
+<body>
+  <div id="title-bar">
+    <div id="title-bar-btns">
+         <button class="float-right" id="close" onclick="window.top.close(); return false">x</button>
+    </div>
+</div>
+  <!-- <a href="http://mozilla.github.io/pdf.js/web/compressed.tracemonkey-pldi-09.pdf" >click</a> -->
+  <embed src="src/js/pdf/1_Architecture.pdf" style="width: 100%; height: 100vh;">
+    <embed class="pf" src="http://mozilla.github.io/pdf.js/web/compressed.tracemonkey-pldi-09.pdf" style="width: 100%; height: 100vh;" id="pf-2">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    
+    </script>
+</body>
+</html>

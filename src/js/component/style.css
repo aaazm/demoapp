@@ -33,7 +33,7 @@ h3{
 
 .left_dv ul {
   list-style: none;
-  padding: 52px 0 122px 0px;
+  padding: 38px 0 122px 0px;
 }
 .left_dv .nv_lik{
   text-align: center;
@@ -47,7 +47,6 @@ h3{
   padding: 10px;
   border-radius: 8px;
   box-shadow: 0 5px 10px #151515;
-  transition: .5s;
 }
 
 .main_active {
@@ -89,7 +88,7 @@ h3{
 
 .lft-log ul li img{
   width: 40px;
-  box-shadow: 0 7px 7px #0e0e0ed4;
+  box-shadow: none;
 }
 .inp_dv{
   display: flex;
@@ -508,10 +507,10 @@ button.btn.btn-primary.gobk {
   right: 23px;
   top: 73px;
 }
-.active{
+/* .active{
   background-color: #064461 !important;
   color: #fff;
-}
+} */
 
 .login_pg{
   margin-top: 250px;

@@ -9,6 +9,9 @@ import {useHistory} from "react-router-dom";
 //import { jsPDF } from "jspdf";
 import {auth} from './component/Fire';
 import Chat from './component/Chat'
+
+
+
 export default function Profile() {
   const logout=()=>{
       auth.signOut();
@@ -22,10 +25,10 @@ export default function Profile() {
       <div className="left_dv lft-log">
         <img className="lft_tb_log" src="src/js/img/logo.png" />
         <ul>
-        <NavLink to="/" className="nv_lik"  style={{color: "#000", textDecoration: "none",}}><li className=" bt"><img src='src/js/img/icon-2.png' alt="icon" /><span className="nv_dtl">Profil</span></li></NavLink>
+        <NavLink to="/" className="nv_lik"  style={{color: "#000", textDecoration: "none",}}><li className=" bt"><img src='src/js/img/icon-1.png' alt="icon" /><span className="nv_dtl">Profile</span></li></NavLink>
         <NavLink to="/Mycorner" className="nv_lik" activeClassName="main_active" style={{color: "#000", textDecoration: "none",}}> <li className=" bt"><img src='src/js/img/icon-2.png' alt="icon" /><span className="nv_dtl">My Corner</span></li></NavLink>
-        <NavLink to="/Pdf" className="nv_lik" activeClassName="main_active" style={{color: "#000", textDecoration: "none",}}><li className=" bt"><img src='src/js/img/icon-2.png' alt="icon" /><span className="nv_dtl">Pdf Corner</span></li></NavLink>
-        <NavLink to="/Onlinetst" className="nv_lik" activeClassName="main_active" style={{color: "#000", textDecoration: "none",}}><li className=" bt"><img src='src/js/img/icon-2.png' alt="icon" /><span className="nv_dtl">Online Test</span></li></NavLink>
+        <NavLink to="/Pdf" className="nv_lik" activeClassName="main_active" style={{color: "#000", textDecoration: "none",}}><li className=" bt"><img src='src/js/img/icon-4.png' alt="icon" /><span className="nv_dtl">Pdf Corner</span></li></NavLink>
+        <NavLink to="/Onlinetst" className="nv_lik" activeClassName="main_active" style={{color: "#000", textDecoration: "none",}}><li className=" bt"><img src='src/js/img/icon-5.png' alt="icon" /><span className="nv_dtl">Online Test</span></li></NavLink>
         <li><button className="btn btn-primary log_out_txt nv_lik" onClick={logout}>Logout</button></li>
         </ul>
         </div>
@@ -331,7 +334,7 @@ function Livvdinn() {
                   autoPlay={true}
                   controls={true}
                   width="100%"
-                  height="100%"
+                  height="70vh"
                 /> }
           </Col>
 
@@ -424,6 +427,14 @@ function Pdftopic() {
   );
 }
 
+export function Pdview() {
+  return(
+    <div>
+        <embed src="src/js/pdf/1_Architecture.pdf" style="width: 100%; height: 90vh;"></embed>
+    </div>
+  )
+}
+
 function Pdflist() {
 
   const history = useHistory();
@@ -436,18 +447,12 @@ function Pdflist() {
         <Row style={{paddingTop: "15px",}}>
           <Col md={3}>
             <div className="corner_crd">
-             <a href="src/js/pdf/1_Architecture.pdf" download><figure style={{margin: "0"}}>
-                <img src="src/js/img/img-6.jpg" alt="image"/>
+             <a href="child.html" target="_blank"><figure style={{margin: "0"}}>
+                <img src="src/js/img/pdf.jpg" alt="image"/>
               </figure></a>
             </div>
-            {/* <h2>Time Management</h2>
-            <Link to="src/js/pdf/1_Architecture.pdf" target="_blank">Download</Link> */}
-           {/* <a  onClick={()=> window.open("src/js/pdf/1_Architecture.pdf", "_blank")}>click</a> */}
-           {/* <Link to="src/js/pdf/1_Architecture.pdf"  download>Download</Link> */}
-            {/* <a href="src/js/pdf/1_Architecture.pdf" target="_blank" rel="noopener noreferrer" download>&#11015;</a> */}
-
+            <h2>1_Architecture</h2>
           </Col>
-         
         </Row>
       </Container>
     </div>
