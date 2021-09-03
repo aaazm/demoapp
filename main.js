@@ -6,9 +6,9 @@ function CreateWindow(){
     const win= new BrowserWindow({
         width,
         height,
-        // frame: false,
-        // scrollBounce:true,
-        // kiosk: true,
+        frame: false,
+        scrollBounce:true,
+        kiosk: true,
         webPreferences: {
             nodeIntegration: true,
             // contextIsolation: false
@@ -34,7 +34,6 @@ app.on('window-all-closed', () => {
       createWindow()
     }
   })
-
 
 
 

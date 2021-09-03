@@ -50,6 +50,7 @@
       </div>
  </div>
 
+
     <script src="app/js/app.js"></script>
     <!-- <script src="./main.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
@@ -57,45 +58,49 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
 
- <script>
-// function goToSettingsWindow(){
-//   ipc.send('openChildWindow');  
-// }
- 
-// function goToFirstWindow() {
-//   remote.getCurrentWindow().close();
-// }
- </script>
- 
-<!-- <script>
- 
-  document.addEventListener("keyup", function (e) {
-        var keyCode = e.keyCode ? e.keyCode : e.which;
-        if (keyCode == 44) {
-          stopPrntScr();
-        }
-      });
-      function stopPrntScr() {
-        var inpFld = document.createElement("input");
-        inpFld.setAttribute("value", ".");
-        inpFld.setAttribute("width", "0");
-        inpFld.style.height = "0px";
-        inpFld.style.width = "0px";
-        inpFld.style.border = "0px";
-        document.body.appendChild(inpFld);
-        inpFld.select();
-        document.execCommand("copy");
-        inpFld.remove(inpFld);
+    <script>
+//Run on keydown, disable user from quiting via ALT+F4
+document.onkeydown = function(evt) {
+    evt = evt || window.event;
+    //Get key unicode
+    var unicode = evt.keyCode ? evt.keyCode : evt.charCode;
+
+    //Check it it's ALT or F4 (115)
+    if (unicode == 9 || evt.altKey == 1)
+    {
+        window.event.cancelBubble = true;
+        window.event.returnValue = false;
+    }
+};
+      </script>
+
+    <!-- <script>
+   document.addEventListener("keyup", function (e) {
+         var keyCode = e.keyCode ? e.keyCode : e.which;
+         if (keyCode == 44) {
+           stopPrntScr();
+         }
+       });
+       function stopPrntScr() {
+         var inpFld = document.createElement("input");
+         inpFld.setAttribute("value", ".");
+         inpFld.setAttribute("width", "0");
+         inpFld.style.height = "0px";
+         inpFld.style.width = "0px";
+         inpFld.style.border = "0px";
+         document.body.appendChild(inpFld);
+         inpFld.select();
+         document.execCommand("copy");
+       inpFld.remove(inpFld);
       }
       function AccessClipboardData() {
         try {
           window.clipboardData.setData("text", "Access   Restricted");
-        } catch (err) {}
-      }
-      setInterval("AccessClipboardData()", 300);
-      
-     
-  </script> -->
+         } catch (err) {}
+     }
+       setInterval("AccessClipboardData()", 300);
+  </script>  -->
+
   <script
   src="https://code.jquery.com/jquery-3.3.1.js"
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
