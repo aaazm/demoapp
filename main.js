@@ -1,14 +1,15 @@
-const {app, BrowserWindow} = require('electron');
+const {app, BrowserWindow, Tray} = require('electron');
 const electron = require('electron');
 
-function CreateWindow(){
+function CreateWindow() {
     const {width, height} = electron.screen.getPrimaryDisplay().workAreaSize
     const win= new BrowserWindow({
         width,
         height,
-        frame: false,
-        scrollBounce:true,
-        kiosk: true,
+        // frame: false,
+        // scrollBounce:true,
+        // kiosk: true,
+        // icon: __dirname + 'app_icon/logo.png',
         webPreferences: {
             nodeIntegration: true,
             // contextIsolation: false
@@ -16,7 +17,7 @@ function CreateWindow(){
      
         // fullscreen: true
     })
-
+    // tray = new Tray('app_icon/logo.png')
     win.loadFile('index.html');
     // win.webContents.openDevTools();
 }
