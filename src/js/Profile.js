@@ -10,8 +10,6 @@ import {useHistory} from "react-router-dom";
 import {auth} from './component/Fire';
 import Chat from './component/Chat'
 
-
-
 export default function Profile() {
   const logout=()=>{
       auth.signOut();

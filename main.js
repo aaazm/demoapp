@@ -9,7 +9,7 @@ function CreateWindow() {
         // frame: false,
         // scrollBounce:true,
         // kiosk: true,
-        // icon: __dirname + 'app_icon/logo.png',
+
         webPreferences: {
             nodeIntegration: true,
             // contextIsolation: false
@@ -17,7 +17,7 @@ function CreateWindow() {
      
         // fullscreen: true
     })
-    // tray = new Tray('app_icon/logo.png')
+
     win.loadFile('index.html');
     // win.webContents.openDevTools();
 }

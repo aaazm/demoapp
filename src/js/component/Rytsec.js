@@ -8,7 +8,7 @@ export default function Rytsec() {
       <Container>
      <Row>
        <Col md={12}>
-       <img src='src/js/img/logo-2.png' alt="Logo" />
+       <img src='src/js/img/logo-3.png' alt="Logo" />
        </Col>
       
      </Row>

@@ -82,8 +82,8 @@ h3{
 }
 .lft-log img{
   width: 80px;
-  /* display: table; */
-  box-shadow: 0 10px 5px #0e0d0d;
+  box-shadow: 0 10px 11px #1f1f1f;
+  border-radius: 8px;
 }
 
 .lft-log ul li img{
@@ -147,15 +147,15 @@ h3{
   box-shadow: 0 5px 10px grey;
   background: #fff;
   padding: 20px;
-  height: 615px;
+  height: 595px;
 }
 .blog_nm{
   /* margin-bottom: 22px; */
   background: linear-gradient(
 45deg
 , #044468, #0c4348);
-  padding-bottom: 21px;
-  padding-top: 4px;
+padding-bottom: 9px;
+padding-top: 9px;
 }
 
 .frd_top_cont figure{
@@ -233,7 +233,7 @@ figure.str_img img{
 }
 
 .blog_nm img{
-  width: 208px;
+  width: 280px;
   display: table;
   margin: auto;
 }
@@ -505,7 +505,7 @@ button.btn.btn-primary.gobk {
   box-shadow: 2px 5px 10px #191919;
   position: absolute;
   right: 23px;
-  top: 73px;
+  top: 123px;
 }
 /* .active{
   background-color: #064461 !important;
@@ -609,7 +609,6 @@ img.log_icn.lock {
 .mod_cls .modal-header{
   border-bottom: none !important;
 }
-
 
 button.btn.btn-primary.log_out_txt.nv_lik {
   background: #064460 !important;
