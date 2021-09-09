@@ -9,7 +9,6 @@ function CreateWindow() {
         // frame: false,
         // scrollBounce:true,
         // kiosk: true,
-
         webPreferences: {
             nodeIntegration: true,
             // contextIsolation: false
@@ -17,9 +16,9 @@ function CreateWindow() {
      
         // fullscreen: true
     })
-
+    tray = new Tray('app_icon/logo.png')
     win.loadFile('index.html');
-    // win.webContents.openDevTools();
+    win.webContents.openDevTools();
 }
 
 app.whenReady().then(CreateWindow);

@@ -53,20 +53,40 @@
 
 
     <script src="app/js/app.js"></script>
-    <!-- <script src="./main.js"></script> -->
+    <script src="./main.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
 
+
+    <!-- <script>
+
+$('.hrefid').on('click', function (e) {
+    var el = $(this);
+    var load = $(e.target).attr("href");
+    if(load == "link") {
+        $.ajax({
+            type: 'post',
+            url: "child.html"+id,
+            success: function (event) {
+                el.next().empty();
+                el.next().append(event.responseText);
+            }
+        });
+    }
+    });
+    </script> -->
+    
     <script>
-//Run on keydown, disable user from quiting via ALT+F4
 document.onkeydown = function(evt) {
     evt = evt || window.event;
     //Get key unicode
     var unicode = evt.keyCode ? evt.keyCode : evt.charCode;
-
-    //Check it it's ALT or F4 (115)
     if (unicode == 9 || evt.altKey == 1)
     {
         window.event.cancelBubble = true;
@@ -75,7 +95,7 @@ document.onkeydown = function(evt) {
 };
       </script>
 
-    <!-- <script>
+    <script>
    document.addEventListener("keyup", function (e) {
          var keyCode = e.keyCode ? e.keyCode : e.which;
          if (keyCode == 44) {
@@ -100,11 +120,6 @@ document.onkeydown = function(evt) {
          } catch (err) {}
      }
        setInterval("AccessClipboardData()", 300);
-  </script>  -->
-
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
+  </script> 
 </body>
 </html>

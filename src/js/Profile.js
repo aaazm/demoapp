@@ -445,7 +445,7 @@ function Pdflist() {
         <Row style={{paddingTop: "15px",}}>
           <Col md={3}>
             <div className="corner_crd">
-             <a href="child.html" target="_blank"><figure style={{margin: "0"}}>
+             <a className="hrefid" href="child.html" target="_blank"><figure style={{margin: "0"}}>
                 <img src="src/js/img/pdf.jpg" alt="image"/>
               </figure></a>
             </div>

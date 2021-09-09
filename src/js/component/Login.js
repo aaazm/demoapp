@@ -4,6 +4,7 @@ import Swal from 'sweetalert2/dist/sweetalert2.js'
 import 'sweetalert2/src/sweetalert2.scss'
 import {Container,Row,Col} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+const pj = require('../../../package.json')
 
 class Login extends Component{
 constructor(props)
@@ -48,7 +49,7 @@ render()
 
                     <Col md={6}>
                         <img src="src/js/img/logo-2.png" />
-                        <h3>Copyright &#169; 2021 NEXT IAS v1.0.0</h3>
+                        <h3>Copyright &#169; 2021 NEXT IAS <span>{pj.version}</span></h3>
                     </Col>
                     <Col md={6}>
                         <div className="log_r_inn">

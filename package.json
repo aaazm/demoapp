@@ -1,6 +1,6 @@
 {
   "name": "demo-app",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "main": "main.js",
   "scripts": {
@@ -15,7 +15,10 @@
   "build": {
     "appId": "com.apps.app",
     "asar": false,
-    "productName": "Test App",
+    "productName": "Next IAS",
+    "win": {
+      "icon": "app_icon/logo.png"
+    },
     "target": [
       "deb",
       "snap",
