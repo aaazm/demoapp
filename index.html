@@ -38,6 +38,19 @@
 .hidden {
   display: none;
 }
+a.hrefid.active{
+  position: relative;
+}
+a.hrefid.active:before {
+  position: absolute;
+    top: 40%;
+    left: 50%;
+    background: #9c191fa6;
+    width: 216px;
+    height: 172px;
+    content: '';
+    z-index: 1;
+}
 </style>
 
 <body>
@@ -64,24 +77,18 @@
     crossorigin="anonymous"></script>
 
 
-    <!-- <script>
+  <script>
+    $(document).ready(function(){
+      $('.corner_crd a').click(function() {
+    var $this = $(this).attr('data-id');
+    $('.pdf_details .tab').hide();
+    $('.pdf_details .' + $this).show();
+    $(".corner_crd a").addClass("active");
+    $(this).removeClass("active");
 
-$('.hrefid').on('click', function (e) {
-    var el = $(this);
-    var load = $(e.target).attr("href");
-    if(load == "link") {
-        $.ajax({
-            type: 'post',
-            url: "child.html"+id,
-            success: function (event) {
-                el.next().empty();
-                el.next().append(event.responseText);
-            }
-        });
-    }
-    });
-    </script> -->
-    
+  });
+});
+  </script>    
     <script>
 document.onkeydown = function(evt) {
     evt = evt || window.event;

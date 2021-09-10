@@ -43,9 +43,10 @@ h3{
   width: 125px;
   display: table;
   margin: auto;
-  margin-bottom: 22px;
-  padding: 10px;
+  margin-bottom: 14px;
+  padding: 7px 0;
   border-radius: 8px;
+  border: 6px double #cccccc;
   box-shadow: 0 5px 10px #151515;
 }
 
@@ -87,8 +88,10 @@ h3{
 }
 
 .lft-log ul li img{
-  width: 40px;
-  box-shadow: none;
+  width: 50px;
+  /* border: 3px double #d4d0d0; */
+  box-shadow: 0 8px 11px #252525bd;
+  padding: 5px;
 }
 .inp_dv{
   display: flex;
@@ -425,7 +428,7 @@ figure.str_img img{
 
 .modal-dialog{
   width: 100%;
-  max-width: 100%;
+  max-width: 100% !important;
 }
 
 .modal-content {
@@ -446,7 +449,7 @@ button.close{
   justify-content: center !important;
   align-items: center !important;
 }
-.modal-dialog{
+.modal-dialog {
   height: 100% !important;
 }
  .modal-content.fram{
@@ -457,13 +460,19 @@ button.close{
 }
 .corner_crd{
   border-radius: 8px;
-  border: 1px solid #d8d3d3;
+  border: 6px double #d0d0d0;
   padding: 10px;
   box-shadow: 0 4px 11px #d4d4d4;
 }
 
 .corner_crd img{
   height: 173px;
+}
+
+.corner_crd button{
+  background: #fff;
+    border: none;
+    padding: 0;
 }
 
 .liv_tst{
@@ -559,7 +568,11 @@ font-weight: 600;
 .log_btn:hover{
   background: #236386 !important;
 }
-
+.ffdf {
+  border: 5px solid #d8d8d8;
+  border-radius: 8px;
+  background: #000;
+}
 .log_icn{
   position: absolute;
     left: 161px;

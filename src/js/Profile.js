@@ -1,5 +1,5 @@
 import React,{useState, useEffect } from "react";
-import {Container,Row,Col} from 'react-bootstrap';
+import {Container,Row,Col,Button,Modal} from 'react-bootstrap';
 import Rytsec from './component/Rytsec';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactHlsPlayer from 'react-hls-player/dist';
@@ -9,6 +9,7 @@ import {useHistory} from "react-router-dom";
 //import { jsPDF } from "jspdf";
 import {auth} from './component/Fire';
 import Chat from './component/Chat'
+
 
 export default function Profile() {
   const logout=()=>{
@@ -162,7 +163,6 @@ function Video() {
             </div>
             <h2>Time Management</h2>
           </Col>
-         
         </Row>
       </Container>
     </div>
@@ -197,158 +197,120 @@ function Livvideo() {
 }
 
 function Livvdinn() {
+  const [Tml1, setTml1] = useState(false);
+  const [Tml2, setTml2] = useState(false);
+  const [Tml3, setTml3] = useState(false);
+  
   const history = useHistory();
   return (
     <div>
-       <button className="btn btn-primary gobk" onClick={() => history.goBack()} style={{width:"100px"}}>&#8592;</button>
-        <div className="mycorner">
+      <button className="btn btn-primary gobk" onClick={() => history.goBack()} style={{width:"100px"}}>&#8592;</button>
+      <div className="mycorner">
         <h3>List</h3>
-      <Container>
-        <Row style={{paddingTop: "15px",}}>
-          <Col md={3}>
-            <div className="corner_crd">
-             <figure style={{margin: "0"}} data-toggle="modal" data-target="#hlbModal">
-                <img src="src/js/img/img-6.jpg" alt="image"/>
-              </figure>
-            </div>
-            <h2>Time Management Lecture-1</h2>
-          </Col>
-
-          <Col md={3}>
-            <div className="corner_crd">
-             <figure style={{margin: "0"}} data-toggle="modal" data-target="#mpforModal">
-                <img src="src/js/img/img-6.jpg" alt="image"/>
-              </figure>
-            </div>
-            <h2>Time Management Lecture-2</h2>
-          </Col>
-
-          <Col md={3}>
-            <div className="corner_crd">
-             <figure style={{margin: "0"}} data-toggle="modal" data-target="#yutbleModal">
-                <img src="src/js/img/img-6.jpg" alt="image"/>
-              </figure>
-            </div>
-            <h2>Time Management Lecture-3</h2>
-          </Col>
-         
-        </Row>
-      </Container>
-    </div>
-    
-    <div className="modal fade mod_cls" id="hlbModal"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div className="modal-dialog modal-xl" role="document">
-    <div className="modal-content">
-      <div className="modal-header">
-        <button type="button" className="close" data-dismiss="modal" aria-label="Close" id="modal-close-movie">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <Container>
+          <Row style={{paddingTop: "15px",}}>
+            <Col md={3}>
+              <div className="corner_crd">
+                <Button onClick={() => setTml1(true)}>
+                  <img src="src/js/img/img-6.jpg" alt="image"/>
+                </Button>
+              </div>
+              <h2>Time Management Lecture-1</h2>
+            </Col>
+            <Col md={3}>
+              <div className="corner_crd">
+                <Button onClick={() => setTml2(true)}>
+                  <img src="src/js/img/img-6.jpg" alt="image"/>
+                </Button>
+              </div>
+              <h2>Time Management Lecture-2</h2>
+            </Col>
+            <Col md={3}>
+              <div className="corner_crd">
+                <Button onClick={() => setTml3(true)}>
+                  <img src="src/js/img/img-6.jpg" alt="image"/>
+                </Button>
+              </div>
+              <h2>Time Management Lecture-3</h2>
+            </Col>
+          </Row>
+        </Container>
       </div>
-      <div className="modal-body">
-        <Row>
-          <Col md={9}>
-          <ReactHlsPlayer
-               src="https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
-               
-                    autoPlay={false}
-                    controls={true}
-                    width="100%"
-                    id="modal-video"
-                    height="100%"
-                    hlsConfig={{
-                      maxLoadingDelay: 4,
-                      minAutoBitrate: 0,
-                      lowLatencyMode: true,
-                      maxBufferLength: 30,
-                      maxMaxBufferLength: 600,
-                      startPosition: -1,
-                      debug: false,
-                      liveSyncDurationCount: 3,
-                      liveMaxLatencyDurationCount: Infinity,
-                      liveDurationInfinity: false,
-                    }}
-                  />,
-          </Col>
+      <Modal show={Tml1} onHide={() => setTml1(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title id="Tml1">
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Row>
+            <Col md={9}>
+              { <ReactPlayer url='https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8' 
+                autoPlay={true}
+                controls={true}
+                width="100%"
+                height="80vh"
+                className="ffdf"
+              /> }
+            </Col>
 
-          <Col md={3} style={{background: "#fff",}}>
-        <div className="main_chat">
-        <Chat />
-        </div>
-        </Col>    
-        </Row>
-     
-      </div>
-    
-    </div>
-  </div>
-</div>
-<div className="modal fade mod_cls" id="mpforModal"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div className="modal-dialog modal-xl" role="document">
-    <div className="modal-content">
-      <div className="modal-header">
-        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div className="modal-body">  
+            <Col md={3} style={{background: "#fff",}}>
+              <div className="main_chat">
+                <Chat />
+              </div>
+            </Col>         
+          </Row>
+        </Modal.Body>
+      </Modal>
+      <Modal show={Tml2} onHide={() => setTml2(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title id="Tml2">
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Row>
+            <Col md={9}>
+              { <ReactPlayer url='http://media.w3.org/2010/05/bunny/movie.mp4' 
+                autoPlay={true}
+                controls={true}
+                width="100%"
+                height="80vh"
+                className="ffdf"
+              /> }
+            </Col>
 
-      <Row>
-      <Col md={9}>
-        { <ReactPlayer url='http://media.w3.org/2010/05/bunny/movie.mp4' 
-                  autoPlay={true}
-                  controls={true}
-                  width="100%"
-                  height="100%"
-                /> }    
-        </Col>
+            <Col md={3} style={{background: "#fff",}}>
+              <div className="main_chat">
+                <Chat />
+              </div>
+            </Col>         
+          </Row>
+        </Modal.Body>
+      </Modal>
+      <Modal show={Tml3} onHide={() => setTml3(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title id="Tml3">
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Row>
+            <Col md={9}>
+              { <ReactPlayer url='https://www.youtube.com/watch?v=932fiU2mENM' 
+                autoPlay={true}
+                controls={true}
+                width="100%"
+                height="80vh"
+                className="ffdf"
+              /> }
+            </Col>
 
-        <Col md={3} style={{background: "#fff",}}>
-        <div className="main_chat">
-        <Chat />
-        </div>
-        </Col>   
-      </Row>
-     
-      </div>
-     
-    </div>
-  </div>
-</div>
-
-
-
-<div className="modal fade mod_cls" id="yutbleModal"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div className="modal-dialog modal-xl" role="document">
-    <div className="modal-content fram">
-      <div className="modal-header">
-        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div className="modal-body "> 
-      <Row>
-      <Col md={9}>
-          { <ReactPlayer url='https://www.youtube.com/watch?v=932fiU2mENM' 
-                  autoPlay={true}
-                  controls={true}
-                  width="100%"
-                  height="70vh"
-                /> }
-          </Col>
-
-          <Col md={3} style={{background: "#fff",}}>
-        <div className="main_chat">
-        <Chat />
-        </div>
-        </Col>         
-      </Row> 
-      
-      </div>
-     
-    </div>
-  </div>
-</div>
-    
+            <Col md={3} style={{background: "#fff",}}>
+              <div className="main_chat">
+                <Chat />
+              </div>
+            </Col>         
+          </Row>
+        </Modal.Body>
+      </Modal>
     </div>
   );
 }
@@ -433,23 +395,30 @@ export function Pdview() {
   )
 }
 
-function Pdflist() {
+function Pdflist(props) {
 
-  const history = useHistory();
   return (
     <div>
-             <button className="btn btn-primary gobk" onClick={() => history.goBack()} style={{width:"100px"}}>&#8592;</button>
+             <button className="btn btn-primary gobk"  onClick={() => history.goBack()} style={{width:"100px"}}>&#8592;</button>
         <div className="mycorner">
         <h3>List PDF</h3>
       <Container>
         <Row style={{paddingTop: "15px",}}>
           <Col md={3}>
             <div className="corner_crd">
-             <a className="hrefid" href="child.html" target="_blank"><figure style={{margin: "0"}}>
+             <a className="hrefid active" href="child.html"  data-id="tab-1" target="_blank"><figure style={{margin: "0"}}>
                 <img src="src/js/img/pdf.jpg" alt="image"/>
               </figure></a>
             </div>
             <h2>1_Architecture</h2>
+          </Col>
+          <Col md={3}>
+            <div className="corner_crd">
+             <a className="hrefid" href="child.html" data-id="tab-2" target="_blank"><figure style={{margin: "0"}}>
+                <img src="src/js/img/pdf.jpg" alt="image"/>
+              </figure></a>
+            </div>
+            <h2>2_Architecture</h2>
           </Col>
         </Row>
       </Container>
