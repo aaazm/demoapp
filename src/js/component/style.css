@@ -33,7 +33,7 @@ h3{
 
 .left_dv ul {
   list-style: none;
-  padding: 38px 0 122px 0px;
+  padding: 28px 0 122px 0px;
 }
 .left_dv .nv_lik{
   text-align: center;
@@ -457,6 +457,7 @@ button.close{
 }
 .bt{
   margin-right: 10px;
+  margin-top: 5px !important;
 }
 .corner_crd{
   border-radius: 8px;
@@ -569,7 +570,7 @@ font-weight: 600;
   background: #236386 !important;
 }
 .ffdf {
-  border: 5px solid #d8d8d8;
+  border: 5px solid #000;
   border-radius: 8px;
   background: #000;
 }

@@ -395,7 +395,7 @@ export function Pdview() {
   )
 }
 
-function Pdflist(props) {
+function Pdflist() {
 
   return (
     <div>

@@ -6,9 +6,12 @@ function CreateWindow() {
     const win= new BrowserWindow({
         width,
         height,
-        // frame: false,
-        // scrollBounce:true,
-        // kiosk: true,
+        frame: false,
+        scrollBounce:true,
+        kiosk: true,
+        altKey: false,
+        ctrlKey: false,
+        icon: __dirname + 'app_icon/logo.png',
         webPreferences: {
             nodeIntegration: true,
             // contextIsolation: false
@@ -16,7 +19,7 @@ function CreateWindow() {
      
         // fullscreen: true
     })
-    tray = new Tray('app_icon/logo.png')
+    tray = new Tray('app_icon/logo.png');
     win.loadFile('index.html');
     win.webContents.openDevTools();
 }
@@ -34,6 +37,7 @@ app.on('window-all-closed', () => {
       createWindow()
     }
   })
+
 
 
 
