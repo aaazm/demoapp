@@ -6,9 +6,9 @@ function CreateWindow() {
     const win= new BrowserWindow({
         width,
         height,
-        frame: false,
-        scrollBounce:true,
-        kiosk: true,
+        // frame: false,
+        // scrollBounce:true,
+        // kiosk: true,
         altKey: false,
         ctrlKey: false,
         icon: __dirname + 'app_icon/logo.png',
@@ -21,7 +21,7 @@ function CreateWindow() {
     })
     tray = new Tray('app_icon/logo.png');
     win.loadFile('index.html');
-    win.webContents.openDevTools();
+    // win.webContents.openDevTools();
 }
 
 app.whenReady().then(CreateWindow);

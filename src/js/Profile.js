@@ -241,7 +241,7 @@ function Livvdinn() {
           <Modal.Title id="Tml1">
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className="md_bd">
           <Row>
             <Col md={9}>
               { <ReactPlayer url='https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8' 
@@ -266,7 +266,7 @@ function Livvdinn() {
           <Modal.Title id="Tml2">
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className="md_bd">
           <Row>
             <Col md={9}>
               { <ReactPlayer url='http://media.w3.org/2010/05/bunny/movie.mp4' 
@@ -291,7 +291,7 @@ function Livvdinn() {
           <Modal.Title id="Tml3">
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className="md_bd">
           <Row>
             <Col md={9}>
               { <ReactPlayer url='https://www.youtube.com/watch?v=932fiU2mENM' 

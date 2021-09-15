@@ -570,7 +570,6 @@ font-weight: 600;
   background: #236386 !important;
 }
 .ffdf {
-  border: 5px solid #000;
   border-radius: 8px;
   background: #000;
 }
@@ -627,4 +626,10 @@ img.log_icn.lock {
 button.btn.btn-primary.log_out_txt.nv_lik {
   background: #064460 !important;
   color: #fff !important;
+}
+
+.md_bd{
+  border: 5px solid #000;
+  margin: 5px;
+  border-radius: 8px;
 }

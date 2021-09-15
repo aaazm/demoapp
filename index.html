@@ -89,21 +89,46 @@ a.hrefid.active:before {
   });
 });
   </script>    
-<script>
-    export function onKeyPress(e) {
-    let cm = this
-    if (eventInWidget(cm.display, e) || signalDOMEvent(cm, e) || e.ctrlKey && !e.altKey || mac && e.metaKey) return
-    let keyCode = e.keyCode, charCode = e.charCode
-    if (presto && keyCode == lastStoppedKey) {lastStoppedKey = null; e_preventDefault(e); return}
-    if ((presto && (!e.which || e.which < 10)) && handleKeyBinding(cm, e)) return
-    let ch = String.fromCharCode(charCode == null ? keyCode : charCode)
-    // Some browsers fire keypress events for backspace
-    if (ch == "\x08") return
-    if (handleCharBinding(cm, e, ch)) return
-    cm.display.input.onKeyPress(e)
-    }
-  </script>
 
+    <script>
+       (function() {
+  var hidden = "hidden";
+
+  // Standards:
+  if (hidden in document)
+    document.addEventListener("visibilitychange", onchange);
+  else if ((hidden = "mozHidden") in document)
+    document.addEventListener("mozvisibilitychange", onchange);
+  else if ((hidden = "webkitHidden") in document)
+    document.addEventListener("webkitvisibilitychange", onchange);
+  else if ((hidden = "msHidden") in document)
+    document.addEventListener("msvisibilitychange", onchange);
+  // IE 9 and lower:
+  else if ("onfocusin" in document)
+    document.onfocusin = document.onfocusout = onchange;
+  // All others:
+  else
+    window.onpageshow = window.onpagehide
+    = window.onfocus = window.onblur = onchange;
+
+  function onchange (evt) {
+    var v = "visible", h = "hidden",
+        evtMap = {
+          focus:v, focusin:v, pageshow:v, blur:h, focusout:h, pagehide:h
+        };
+
+    evt = evt || window.event;
+    if (evt.type in evtMap)
+      document.body.className = evtMap[evt.type];
+    else
+      document.body.className = this[hidden] ? "hidden" : "visible";
+  }
+
+  // set the initial state (but only if browser supports the Page Visibility API)
+  if( document[hidden] !== undefined )
+    onchange({type: document[hidden] ? "blur" : "focus"});
+})();
+    </script>
     <script>
    document.addEventListener("keyup", function (e) {
          var keyCode = e.keyCode ? e.keyCode : e.which;
