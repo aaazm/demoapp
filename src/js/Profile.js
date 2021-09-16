@@ -4,6 +4,7 @@ import Rytsec from './component/Rytsec';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactHlsPlayer from 'react-hls-player/dist';
 import ReactPlayer from 'react-player';
+import { Slider, Direction } from 'react-player-controls'
 import {NavLink,HashRouter,Link,Route,Switch} from "react-router-dom";
 import {useHistory} from "react-router-dom";
 //import { jsPDF } from "jspdf";
@@ -200,7 +201,7 @@ function Livvdinn() {
   const [Tml1, setTml1] = useState(false);
   const [Tml2, setTml2] = useState(false);
   const [Tml3, setTml3] = useState(false);
-  
+
   const history = useHistory();
   return (
     <div>
@@ -248,6 +249,7 @@ function Livvdinn() {
                 autoPlay={true}
                 controls={true}
                 width="100%"
+                id="myPlayerID"
                 height="80vh"
                 className="ffdf"
               /> }

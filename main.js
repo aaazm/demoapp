@@ -9,12 +9,16 @@ function CreateWindow() {
         // frame: false,
         // scrollBounce:true,
         // kiosk: true,
-        altKey: false,
-        ctrlKey: false,
+        // center: true,
+        minimizable: false,
+        show: true,
         icon: __dirname + 'app_icon/logo.png',
         webPreferences: {
             nodeIntegration: true,
-            // contextIsolation: false
+            webSecurity: true,
+            sandbox: true,
+            worldSafeExecuteJavaScript: true,
+            contextIsolation: true
         }
      
         // fullscreen: true
@@ -37,6 +41,7 @@ app.on('window-all-closed', () => {
       createWindow()
     }
   })
+
 
 
 
