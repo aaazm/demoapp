@@ -4,7 +4,7 @@ import Rytsec from './component/Rytsec';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactHlsPlayer from 'react-hls-player/dist';
 import ReactPlayer from 'react-player';
-import { Slider, Direction } from 'react-player-controls'
+import { LionPlayer } from 'lion-player';
 import {NavLink,HashRouter,Link,Route,Switch} from "react-router-dom";
 import {useHistory} from "react-router-dom";
 //import { jsPDF } from "jspdf";
@@ -196,7 +196,16 @@ function Livvideo() {
     </div>
   );
 }
-
+// const SOURCES = [
+//   {
+//     src: 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8',
+//     type: 'application/x-mpegURL',
+//   },
+//   {
+//     src: 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/mpds/105560.mpd',
+//     type: 'application/dash+xml',
+//   }
+// ];
 function Livvdinn() {
   const [Tml1, setTml1] = useState(false);
   const [Tml2, setTml2] = useState(false);
@@ -245,14 +254,21 @@ function Livvdinn() {
         <Modal.Body className="md_bd">
           <Row>
             <Col md={9}>
-              { <ReactPlayer url='https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8' 
+            <LionPlayer  
+              sources='https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8'
+              autoplay={false}
+              muted={false}
+              width="100%"
+              height="80vh"
+              className="ffdf" />
+              {/* { <ReactPlayer url='https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8' 
                 autoPlay={true}
                 controls={true}
                 width="100%"
                 id="myPlayerID"
                 height="80vh"
                 className="ffdf"
-              /> }
+              /> } */}
             </Col>
 
             <Col md={3} style={{background: "#fff",}}>
@@ -271,12 +287,27 @@ function Livvdinn() {
         <Modal.Body className="md_bd">
           <Row>
             <Col md={9}>
+            {/* <LionPlayer  
+              sources='http://media.w3.org/2010/05/bunny/movie.mp4'
+              autoplay={false}
+              muted={false}
+              sourceOrder={true}
+              width="100%"
+              height="80vh"
+              className="ffdf" /> */}
               { <ReactPlayer url='http://media.w3.org/2010/05/bunny/movie.mp4' 
                 autoPlay={true}
-                controls={true}
+                // controls={true}
                 width="100%"
                 height="80vh"
                 className="ffdf"
+                controls={true}
+                config={{ file: { 
+                  attributes: {
+                    controlsList: 'nodownload'  //<- this is the important bit
+                  }
+              }}}
+              onEnded={()=>this.onEnded()}
               /> }
             </Col>
 
@@ -343,7 +374,7 @@ function Pdfsubject() {
   const history = useHistory();
   return (
     <div>
-             <button className="btn btn-primary gobk" onClick={() => history.goBack()} style={{width:"100px"}}>&#8592;</button>
+        <button className="btn btn-primary gobk" onClick={() => history.goBack()} style={{width:"100px"}}>&#8592;</button>
         <div className="mycorner">
         <h3>Subject PDF</h3>
       <Container>
@@ -428,6 +459,7 @@ function Pdflist() {
     </div>
   );
 }
+
 
 function Onlinetst() {
   return (

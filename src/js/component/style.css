@@ -633,3 +633,9 @@ button.btn.btn-primary.log_out_txt.nv_lik {
   margin: 5px;
   border-radius: 8px;
 }
+.video-js{
+  height: 80vh !important;
+}
+/* .vjs-theme-lion .vjs-button>.vjs-icon-placeholder:before {
+  line-height: 0.55 !important;
+} */

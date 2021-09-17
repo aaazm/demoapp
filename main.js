@@ -10,7 +10,7 @@ function CreateWindow() {
         // scrollBounce:true,
         // kiosk: true,
         // center: true,
-        minimizable: false,
+        // minimizable: false,
         show: true,
         icon: __dirname + 'app_icon/logo.png',
         webPreferences: {
