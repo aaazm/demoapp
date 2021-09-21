@@ -151,7 +151,7 @@ function Video() {
   const history = useHistory();
   return (
     <div>
-             <button className="btn btn-primary gobk" onClick={() => history.goBack()} style={{width:"100px"}}>&#8592;</button>
+        <button className="btn btn-primary gobk" onClick={() => history.goBack()} style={{width:"100px"}}>&#8592;</button>
         <div className="mycorner">
         <h3>Subject</h3>
       <Container>
@@ -432,7 +432,7 @@ function Pdflist() {
 
   return (
     <div>
-             <button className="btn btn-primary gobk"  onClick={() => history.goBack()} style={{width:"100px"}}>&#8592;</button>
+        <button className="btn btn-primary gobk"  onClick={() => history.goBack()} style={{width:"100px"}}>&#8592;</button>
         <div className="mycorner">
         <h3>List PDF</h3>
       <Container>
@@ -445,14 +445,7 @@ function Pdflist() {
             </div>
             <h2>1_Architecture</h2>
           </Col>
-          <Col md={3}>
-            <div className="corner_crd">
-             <a className="hrefid" href="child.html" data-id="tab-2" target="_blank"><figure style={{margin: "0"}}>
-                <img src="src/js/img/pdf.jpg" alt="image"/>
-              </figure></a>
-            </div>
-            <h2>2_Architecture</h2>
-          </Col>
+
         </Row>
       </Container>
     </div>
